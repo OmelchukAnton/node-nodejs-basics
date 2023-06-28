@@ -1,5 +1,14 @@
+import { env } from 'node:process';
+
 const parseEnv = () => {
-    // Write your code here 
+  const displayArr = [];
+  for (const [key, value] of Object.entries(env)) {
+    if (key.includes('RSS_')) {
+      displayArr.push(`${key}=${value}`);
+    }
+  }
+
+  console.log(displayArr.join('; '));
 };
 
 parseEnv();
